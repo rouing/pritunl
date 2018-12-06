@@ -19,7 +19,7 @@ locale-gen en_US en_US.UTF-8
 dpkg-reconfigure locales
 ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
-PRITUNL_VERSION=$(curl --silent "https://api.github.com/repos/pritunl/pritunl/releases/latest" | grep '"tag_name":'' | sed -E 's/.*"([^"]+)".*/\1/')
+PRITUNL_VERSION=$(curl --silent "https://api.github.com/repos/pritunl/pritunl/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 
 wget --quiet https://github.com/pritunl/pritunl/releases/download/${PRITUNL_VERSION}/pritunl_${PRITUNL_VERSION}-0ubuntu1.xenial_amd64.deb
 dpkg -i pritunl_${PRITUNL_VERSION}-0ubuntu1.xenial_amd64.deb || apt-get -f -y install
