@@ -8,8 +8,9 @@ apt-get upgrade -y -q
 
 apt-get install -y locales iptables wget gnupg2
 
+apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
 apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 8E6DA8B4E158C569
+wget -O - https://swupdate.openvpn.net/repos/repo-public.gpg | apt-key add -
 
 locale-gen en_US en_US.UTF-8
 dpkg-reconfigure locales

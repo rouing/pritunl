@@ -1,6 +1,6 @@
 # Pritunl as a Docker container
 
-[Public Repo](https://???)
+[Public Repo](https://github.com/rouing/pritunl)
 [Public Registry](https://hub.docker.com/r/rouing/pritunl/)
 
 [Private Repo](https://git.rouing.me/docker/pritunl)
