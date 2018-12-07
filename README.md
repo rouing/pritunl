@@ -1,9 +1,12 @@
 # Pritunl as a Docker container
 
 [Public Repo](https://github.com/rouing/pritunl)
+
 [Public Registry](https://hub.docker.com/r/rouing/pritunl/)
 
+
 [Private Repo](https://git.rouing.me/docker/pritunl)
+
 [Private Registry](https://docker.rouing.me/docker/pritunl/)
 
 ## Config (env)
@@ -15,27 +18,13 @@
 
 ## Usage
 
-Just build it or pull it from jippi/pritunl. Run it something like this:
+Basic Useage
 
 ```sh
 docker run \
     -d \
     --privileged \
-    -p 1194:1194/udp \
-    -p 1194:1194/tcp \
-    -p 80:80/tcp \
-    -p 443:443/tcp \
-    docker.rouing.me/docker/pritunl
-```
-
-If you have a mongodb somewhere you'd like to use for this rather than starting the built-in one you can
-do so through the `PRITUNL_MONGODB_URI` env var like this:
-
-```sh
-docker run \
-    -d \
-    --privileged \
-    -e PRITUNL_MONGODB_URI=mongodb://some-mongo-host:27017/pritunl \
+    -e PRITUNL_MONGODB_URI=mongodb://user:password@some-mongo-host:27017/pritunl \
     -p 1194:1194/udp \
     -p 1194:1194/tcp \
     -p 80:80/tcp \
@@ -54,6 +43,7 @@ docker run \
     --name=pritunl \
     --detach \
     --privileged \
+    -e PRITUNL_MONGODB_URI=mongodb://user:password@some-mongo-host:27017/pritunl \
     --network=host \
     --restart=always \
     -v /gluster/docker0/pritunl/pritunl:/var/lib/pritunl \
